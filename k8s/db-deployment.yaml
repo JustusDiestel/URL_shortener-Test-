@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: url-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: url-db
+  template:
+    metadata:
+      labels:
+        app: url-db
+    spec:
+      containers:
+        - name: db
+          image: postgres:15
+          env:
+            - name: POSTGRES_USER
+              value: "admin"
+            - name: POSTGRES_PASSWORD
+              value: "admin"
+            - name: POSTGRES_DB
+              value: "url_shortener"
+          ports:
+            - containerPort: 5432

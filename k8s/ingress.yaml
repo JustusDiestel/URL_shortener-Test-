@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: url-ingress
+spec:
+  rules:
+    - host: urlshortener.<dein-benutzername>.icc.haw-hamburg.de
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: url-api
+                port:
+                  number: 5001

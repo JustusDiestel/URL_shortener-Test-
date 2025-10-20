@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: url-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: url-api
+  template:
+    metadata:
+      labels:
+        app: url-api
+    spec:
+      containers:
+        - name: api
+          image: justusdiestel/url-api:latest   # dein DockerHub-Image!
+          ports:
+            - containerPort: 5001
+          env:
+            - name: DB_HOST
+              value: "url-db"
+            - name: DB_NAME
+              value: "urls.db"
