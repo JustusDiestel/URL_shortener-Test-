@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# PyCharm / JetBrains
+.idea/
+
+# MacOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs / Cache
+*.log
+.cache/
+.pytest_cache/
+
+# Data / Model Files (optional)
+*.pt
+*.pth
+*.h5
+*.ckpt
